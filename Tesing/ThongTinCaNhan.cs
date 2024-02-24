@@ -3,44 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tesing
 {
-    public partial class DangNhap : Form
+    public partial class ThongTinCaNhan : Form
     {
-        public DangNhap()
+        public ThongTinCaNhan()
         {
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            TrangChu q = new TrangChu();
+            TrangChu tc = new TrangChu();
             this.Hide();
-            q.ShowDialog();
+            tc.ShowDialog();
         }
 
-
-
-        private void llbQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            QuenMatKhau qmk = new QuenMatKhau();
-            this.Hide();
-            qmk.ShowDialog();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DangKy dk = new DangKy();
-            this.Hide();
-            dk.ShowDialog();
-        }
-
-        private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        private void ThongTinCaNhan_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!Program.IsExiting && e.CloseReason == CloseReason.UserClosing)
             {

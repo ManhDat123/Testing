@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Tesing
 {
-    static class Program
+    public class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -19,5 +19,7 @@ namespace Tesing
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DangNhap());
         }
+        public static bool IsExiting { get; set; } = false;
+
     }
 }
