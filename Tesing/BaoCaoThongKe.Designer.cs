@@ -30,18 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoThongKe));
             panel1 = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
-            dataGridView2 = new System.Windows.Forms.DataGridView();
-            dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            label3 = new System.Windows.Forms.Label();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            btnInBaoCao = new System.Windows.Forms.Button();
+            btnLichSu = new System.Windows.Forms.Button();
+            btnTonKho = new System.Windows.Forms.Button();
             panel2 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             panel5 = new System.Windows.Forms.Panel();
@@ -65,8 +56,6 @@
             đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
@@ -81,112 +70,47 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(255, 192, 128);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(dataGridView2);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(btnInBaoCao);
+            panel1.Controls.Add(btnLichSu);
+            panel1.Controls.Add(btnTonKho);
             panel1.Location = new System.Drawing.Point(250, 31);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(732, 520);
+            panel1.Size = new System.Drawing.Size(732, 574);
             panel1.TabIndex = 11;
             // 
-            // label1
+            // btnInBaoCao
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(61, 247);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(162, 25);
-            label1.TabIndex = 2;
-            label1.Text = "Lịch sử xuất nhập";
+            btnInBaoCao.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnInBaoCao.Location = new System.Drawing.Point(265, 333);
+            btnInBaoCao.Name = "btnInBaoCao";
+            btnInBaoCao.Size = new System.Drawing.Size(207, 83);
+            btnInBaoCao.TabIndex = 2;
+            btnInBaoCao.Text = "In báo cáo";
+            btnInBaoCao.UseVisualStyleBackColor = false;
             // 
-            // dataGridView2
+            // btnLichSu
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView2.Location = new System.Drawing.Point(61, 278);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new System.Drawing.Size(611, 191);
-            dataGridView2.TabIndex = 3;
+            btnLichSu.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            btnLichSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnLichSu.Location = new System.Drawing.Point(430, 159);
+            btnLichSu.Name = "btnLichSu";
+            btnLichSu.Size = new System.Drawing.Size(207, 83);
+            btnLichSu.TabIndex = 1;
+            btnLichSu.Text = "Lịch sử xuất nhập";
+            btnLichSu.UseVisualStyleBackColor = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // btnTonKho
             // 
-            dataGridViewTextBoxColumn1.HeaderText = "Cột 1";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Cột 2";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Cột 3";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "Cột 4";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(61, 13);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(185, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Danh sách hàng hóa";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new System.Drawing.Point(61, 44);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new System.Drawing.Size(611, 191);
-            dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Cột 1";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Cột 2";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Cột 3";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Cột 4";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
+            btnTonKho.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            btnTonKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnTonKho.Location = new System.Drawing.Point(95, 159);
+            btnTonKho.Name = "btnTonKho";
+            btnTonKho.Size = new System.Drawing.Size(207, 83);
+            btnTonKho.TabIndex = 0;
+            btnTonKho.Text = "Báo cáo tồn kho";
+            btnTonKho.UseVisualStyleBackColor = false;
+            btnTonKho.Click += btnTonKho_Click;
             // 
             // panel2
             // 
@@ -196,7 +120,7 @@
             panel2.Controls.Add(panel4);
             panel2.Location = new System.Drawing.Point(0, 31);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(250, 520);
+            panel2.Size = new System.Drawing.Size(250, 574);
             panel2.TabIndex = 4;
             // 
             // panel3
@@ -248,7 +172,7 @@
             panel6.Controls.Add(btnQLTK);
             panel6.Location = new System.Drawing.Point(0, 119);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(250, 398);
+            panel6.Size = new System.Drawing.Size(250, 452);
             panel6.TabIndex = 2;
             // 
             // btnBCTK
@@ -410,7 +334,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(982, 553);
+            ClientSize = new System.Drawing.Size(982, 603);
             Controls.Add(menuStrip1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -420,9 +344,6 @@
             Text = "Báo cáo thống kê";
             FormClosing += BaoCaoThongKe_FormClosing;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -441,18 +362,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
@@ -475,5 +384,8 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.Button btnInBaoCao;
+        private System.Windows.Forms.Button btnLichSu;
+        private System.Windows.Forms.Button btnTonKho;
     }
 }

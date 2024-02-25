@@ -104,7 +104,7 @@
             panel1.Controls.Add(panel2);
             panel1.Location = new System.Drawing.Point(0, 31);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(250, 520);
+            panel1.Size = new System.Drawing.Size(250, 573);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -156,7 +156,7 @@
             panel6.Controls.Add(btnQLTK);
             panel6.Location = new System.Drawing.Point(0, 119);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(250, 398);
+            panel6.Size = new System.Drawing.Size(250, 451);
             panel6.TabIndex = 2;
             // 
             // btnBCTK
@@ -322,16 +322,16 @@
             panel7.Controls.Add(panel12);
             panel7.Controls.Add(panel10);
             panel7.Controls.Add(panel8);
-            panel7.Location = new System.Drawing.Point(253, 31);
+            panel7.Location = new System.Drawing.Point(250, 31);
             panel7.Name = "panel7";
-            panel7.Size = new System.Drawing.Size(729, 520);
+            panel7.Size = new System.Drawing.Size(732, 573);
             panel7.TabIndex = 2;
             // 
             // panel14
             // 
             panel14.Controls.Add(pictureBox6);
             panel14.Controls.Add(panel15);
-            panel14.Location = new System.Drawing.Point(94, 344);
+            panel14.Location = new System.Drawing.Point(96, 392);
             panel14.Name = "panel14";
             panel14.Size = new System.Drawing.Size(541, 101);
             panel14.TabIndex = 3;
@@ -380,7 +380,7 @@
             // 
             panel12.Controls.Add(pictureBox5);
             panel12.Controls.Add(panel13);
-            panel12.Location = new System.Drawing.Point(94, 240);
+            panel12.Location = new System.Drawing.Point(96, 288);
             panel12.Name = "panel12";
             panel12.Size = new System.Drawing.Size(541, 101);
             panel12.TabIndex = 2;
@@ -429,7 +429,7 @@
             // 
             panel10.Controls.Add(panel11);
             panel10.Controls.Add(pictureBox4);
-            panel10.Location = new System.Drawing.Point(94, 136);
+            panel10.Location = new System.Drawing.Point(96, 184);
             panel10.Name = "panel10";
             panel10.Size = new System.Drawing.Size(541, 101);
             panel10.TabIndex = 1;
@@ -478,7 +478,7 @@
             // 
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(pictureBox3);
-            panel8.Location = new System.Drawing.Point(94, 32);
+            panel8.Location = new System.Drawing.Point(96, 80);
             panel8.Name = "panel8";
             panel8.Size = new System.Drawing.Size(541, 101);
             panel8.TabIndex = 0;
@@ -527,7 +527,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(982, 553);
+            ClientSize = new System.Drawing.Size(982, 603);
             Controls.Add(panel7);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);

@@ -30,8 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyNhap));
             panel1 = new System.Windows.Forms.Panel();
+            button5 = new System.Windows.Forms.Button();
+            textBox7 = new System.Windows.Forms.TextBox();
             button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
+            button3 = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
+            dataGridView1 = new System.Windows.Forms.DataGridView();
+            Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox1 = new System.Windows.Forms.GroupBox();
             comboBox1 = new System.Windows.Forms.ComboBox();
             label10 = new System.Windows.Forms.Label();
@@ -47,14 +56,6 @@
             label5 = new System.Windows.Forms.Label();
             textBox1 = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
-            button3 = new System.Windows.Forms.Button();
-            button4 = new System.Windows.Forms.Button();
-            label3 = new System.Windows.Forms.Label();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
-            Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             panel2 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             panel5 = new System.Windows.Forms.Panel();
@@ -78,8 +79,8 @@
             đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             panel1.SuspendLayout();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
@@ -94,26 +95,43 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(255, 192, 128);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(textBox7);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(groupBox1);
             panel1.Location = new System.Drawing.Point(250, 31);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(732, 520);
+            panel1.Size = new System.Drawing.Size(732, 574);
             panel1.TabIndex = 12;
+            // 
+            // button5
+            // 
+            button5.Image = (System.Drawing.Image)resources.GetObject("button5.Image");
+            button5.Location = new System.Drawing.Point(640, 227);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(32, 27);
+            button5.TabIndex = 17;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new System.Drawing.Point(384, 227);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new System.Drawing.Size(250, 27);
+            textBox7.TabIndex = 16;
             // 
             // button1
             // 
             button1.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Location = new System.Drawing.Point(518, 446);
+            button1.Location = new System.Drawing.Point(523, 476);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(142, 49);
-            button1.TabIndex = 6;
+            button1.TabIndex = 15;
             button1.Text = "Thoát";
             button1.UseVisualStyleBackColor = false;
             // 
@@ -121,12 +139,73 @@
             // 
             button2.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Location = new System.Drawing.Point(370, 446);
+            button2.Location = new System.Drawing.Point(375, 476);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(142, 49);
-            button2.TabIndex = 5;
+            button2.TabIndex = 14;
             button2.Text = "Sửa yêu cầu";
             button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button3.Location = new System.Drawing.Point(227, 476);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(142, 49);
+            button3.TabIndex = 13;
+            button3.Text = "Từ chối";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button4.Location = new System.Drawing.Point(78, 476);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(142, 49);
+            button4.TabIndex = 12;
+            button4.Text = "Đồng ý";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridView1.Location = new System.Drawing.Point(61, 260);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new System.Drawing.Size(611, 191);
+            dataGridView1.TabIndex = 11;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Cột 1";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Cột 2";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Cột 3";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Cột 4";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 125;
             // 
             // groupBox1
             // 
@@ -144,7 +223,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new System.Drawing.Point(61, 61);
+            groupBox1.Location = new System.Drawing.Point(61, 50);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new System.Drawing.Size(611, 171);
             groupBox1.TabIndex = 4;
@@ -265,77 +344,6 @@
             label1.TabIndex = 0;
             label1.Text = "Mã nhập";
             // 
-            // button3
-            // 
-            button3.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button3.Location = new System.Drawing.Point(222, 446);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(142, 49);
-            button3.TabIndex = 3;
-            button3.Text = "Từ chối";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button4.Location = new System.Drawing.Point(73, 446);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(142, 49);
-            button4.TabIndex = 2;
-            button4.Text = "Đồng ý";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(61, 13);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(137, 28);
-            label3.TabIndex = 0;
-            label3.Text = "Yêu cầu nhập";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new System.Drawing.Point(61, 238);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new System.Drawing.Size(611, 191);
-            dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Cột 1";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Cột 2";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Cột 3";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Cột 4";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
-            // 
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.Gray;
@@ -344,7 +352,7 @@
             panel2.Controls.Add(panel4);
             panel2.Location = new System.Drawing.Point(0, 31);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(250, 520);
+            panel2.Size = new System.Drawing.Size(250, 574);
             panel2.TabIndex = 7;
             // 
             // panel3
@@ -396,7 +404,7 @@
             panel6.Controls.Add(btnQLTK);
             panel6.Location = new System.Drawing.Point(0, 119);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(250, 398);
+            panel6.Size = new System.Drawing.Size(250, 452);
             panel6.TabIndex = 2;
             // 
             // btnBCTK
@@ -558,7 +566,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(982, 553);
+            ClientSize = new System.Drawing.Size(982, 603);
             Controls.Add(menuStrip1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -569,9 +577,9 @@
             FormClosing += QuanLyNhap_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -590,8 +598,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
@@ -607,14 +613,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
@@ -637,5 +635,16 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

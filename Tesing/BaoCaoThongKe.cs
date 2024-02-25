@@ -106,5 +106,12 @@ namespace Tesing
                 }
             }
         }
+
+        private void btnTonKho_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonKho bctk = new BaoCaoTonKho();
+            this.Hide();
+            bctk.ShowDialog();
+        }
     }
 }

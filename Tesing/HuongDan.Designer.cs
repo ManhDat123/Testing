@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HuongDan));
             panel1 = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             btnQuayLai = new System.Windows.Forms.Button();
             panel1.SuspendLayout();
@@ -38,28 +37,17 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnQuayLai);
             panel1.Location = new System.Drawing.Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(808, 529);
+            panel1.Size = new System.Drawing.Size(808, 479);
             panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(45, 36);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(306, 28);
-            label1.TabIndex = 13;
-            label1.Text = "Hướng dẫn sử dụng phần mềm";
             // 
             // label2
             // 
             label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(45, 81);
+            label2.Location = new System.Drawing.Point(45, 24);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(718, 366);
             label2.TabIndex = 1;
@@ -70,7 +58,7 @@
             btnQuayLai.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnQuayLai.Location = new System.Drawing.Point(630, 450);
+            btnQuayLai.Location = new System.Drawing.Point(630, 411);
             btnQuayLai.Name = "btnQuayLai";
             btnQuayLai.Size = new System.Drawing.Size(133, 43);
             btnQuayLai.TabIndex = 12;
@@ -83,7 +71,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(255, 192, 128);
-            ClientSize = new System.Drawing.Size(832, 553);
+            ClientSize = new System.Drawing.Size(832, 503);
             Controls.Add(panel1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Name = "HuongDan";
@@ -91,7 +79,6 @@
             Text = "Hướng dẫn";
             FormClosing += HuongDan_FormClosing;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -100,6 +87,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

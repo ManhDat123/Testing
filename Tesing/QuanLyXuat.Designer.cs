@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyXuat));
             panel1 = new System.Windows.Forms.Panel();
+            button5 = new System.Windows.Forms.Button();
+            textBox7 = new System.Windows.Forms.TextBox();
             button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,7 +51,6 @@
             label1 = new System.Windows.Forms.Label();
             button3 = new System.Windows.Forms.Button();
             button4 = new System.Windows.Forms.Button();
-            label3 = new System.Windows.Forms.Label();
             dataGridView1 = new System.Windows.Forms.DataGridView();
             Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,23 +95,40 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(255, 192, 128);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(textBox7);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(dataGridView1);
             panel1.Location = new System.Drawing.Point(250, 31);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(732, 520);
+            panel1.Size = new System.Drawing.Size(732, 574);
             panel1.TabIndex = 10;
+            // 
+            // button5
+            // 
+            button5.Image = (System.Drawing.Image)resources.GetObject("button5.Image");
+            button5.Location = new System.Drawing.Point(640, 227);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(32, 27);
+            button5.TabIndex = 10;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new System.Drawing.Point(384, 227);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new System.Drawing.Size(250, 27);
+            textBox7.TabIndex = 9;
             // 
             // button1
             // 
             button1.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Location = new System.Drawing.Point(518, 446);
+            button1.Location = new System.Drawing.Point(518, 476);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(142, 49);
             button1.TabIndex = 6;
@@ -121,7 +139,7 @@
             // 
             button2.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Location = new System.Drawing.Point(370, 446);
+            button2.Location = new System.Drawing.Point(370, 476);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(142, 49);
             button2.TabIndex = 5;
@@ -144,7 +162,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new System.Drawing.Point(61, 61);
+            groupBox1.Location = new System.Drawing.Point(61, 50);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new System.Drawing.Size(611, 171);
             groupBox1.TabIndex = 4;
@@ -155,7 +173,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Đang chờ", "Đã duyệt", "Từ chối" });
-            comboBox1.Location = new System.Drawing.Point(374, 113);
+            comboBox1.Location = new System.Drawing.Point(385, 115);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new System.Drawing.Size(193, 28);
             comboBox1.TabIndex = 13;
@@ -163,7 +181,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(273, 116);
+            label10.Location = new System.Drawing.Point(284, 118);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(75, 20);
             label10.TabIndex = 12;
@@ -171,7 +189,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new System.Drawing.Point(99, 113);
+            textBox6.Location = new System.Drawing.Point(110, 115);
             textBox6.Name = "textBox6";
             textBox6.Size = new System.Drawing.Size(155, 27);
             textBox6.TabIndex = 11;
@@ -179,7 +197,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(21, 116);
+            label9.Location = new System.Drawing.Point(32, 118);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(72, 20);
             label9.TabIndex = 10;
@@ -187,15 +205,15 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new System.Drawing.Point(453, 71);
+            textBox5.Location = new System.Drawing.Point(453, 73);
             textBox5.Name = "textBox5";
-            textBox5.Size = new System.Drawing.Size(114, 27);
+            textBox5.Size = new System.Drawing.Size(125, 27);
             textBox5.TabIndex = 9;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(374, 71);
+            label8.Location = new System.Drawing.Point(385, 76);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(62, 20);
             label8.TabIndex = 8;
@@ -203,7 +221,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new System.Drawing.Point(260, 71);
+            textBox4.Location = new System.Drawing.Point(266, 73);
             textBox4.Name = "textBox4";
             textBox4.Size = new System.Drawing.Size(104, 27);
             textBox4.TabIndex = 7;
@@ -211,7 +229,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(185, 74);
+            label7.Location = new System.Drawing.Point(196, 76);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(69, 20);
             label7.TabIndex = 6;
@@ -219,7 +237,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new System.Drawing.Point(100, 74);
+            textBox3.Location = new System.Drawing.Point(111, 73);
             textBox3.Name = "textBox3";
             textBox3.Size = new System.Drawing.Size(79, 27);
             textBox3.TabIndex = 5;
@@ -227,7 +245,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(21, 74);
+            label6.Location = new System.Drawing.Point(32, 76);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(74, 20);
             label6.TabIndex = 4;
@@ -235,7 +253,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new System.Drawing.Point(359, 26);
+            textBox2.Location = new System.Drawing.Point(370, 28);
             textBox2.Name = "textBox2";
             textBox2.Size = new System.Drawing.Size(208, 27);
             textBox2.TabIndex = 3;
@@ -243,7 +261,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(255, 29);
+            label5.Location = new System.Drawing.Point(266, 31);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(100, 20);
             label5.TabIndex = 2;
@@ -251,7 +269,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new System.Drawing.Point(100, 29);
+            textBox1.Location = new System.Drawing.Point(111, 31);
             textBox1.Name = "textBox1";
             textBox1.Size = new System.Drawing.Size(146, 27);
             textBox1.TabIndex = 1;
@@ -259,7 +277,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(21, 29);
+            label1.Location = new System.Drawing.Point(32, 31);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(62, 20);
             label1.TabIndex = 0;
@@ -269,7 +287,7 @@
             // 
             button3.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button3.Location = new System.Drawing.Point(222, 446);
+            button3.Location = new System.Drawing.Point(222, 476);
             button3.Name = "button3";
             button3.Size = new System.Drawing.Size(142, 49);
             button3.TabIndex = 3;
@@ -280,28 +298,18 @@
             // 
             button4.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
             button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button4.Location = new System.Drawing.Point(73, 446);
+            button4.Location = new System.Drawing.Point(73, 476);
             button4.Name = "button4";
             button4.Size = new System.Drawing.Size(142, 49);
             button4.TabIndex = 2;
             button4.Text = "Đồng ý";
             button4.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(61, 13);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(132, 28);
-            label3.TabIndex = 0;
-            label3.Text = "Yêu cầu xuất";
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new System.Drawing.Point(61, 238);
+            dataGridView1.Location = new System.Drawing.Point(61, 260);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
@@ -389,7 +397,7 @@
             panel2.Controls.Add(panel6);
             panel2.Location = new System.Drawing.Point(0, 31);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(250, 520);
+            panel2.Size = new System.Drawing.Size(250, 574);
             panel2.TabIndex = 12;
             // 
             // panel3
@@ -481,7 +489,7 @@
             panel6.Controls.Add(btnQLTK);
             panel6.Location = new System.Drawing.Point(0, 119);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(250, 398);
+            panel6.Size = new System.Drawing.Size(250, 452);
             panel6.TabIndex = 2;
             // 
             // btnBCTK
@@ -561,7 +569,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(982, 553);
+            ClientSize = new System.Drawing.Size(982, 603);
             Controls.Add(panel2);
             Controls.Add(menuStrip1);
             Controls.Add(panel1);
@@ -611,7 +619,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -640,5 +647,7 @@
         private System.Windows.Forms.Button btnQLHH;
         private System.Windows.Forms.Button btnQLNV;
         private System.Windows.Forms.Button btnQLTK;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }

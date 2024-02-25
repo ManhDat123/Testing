@@ -63,6 +63,16 @@ namespace Tesing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _211817_search_strong_icon {
+            get {
+                object obj = ResourceManager.GetObject("211817_search_strong_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconcanhan {
             get {
                 object obj = ResourceManager.GetObject("iconcanhan", resourceCulture);
@@ -86,6 +96,16 @@ namespace Tesing.Properties {
         internal static System.Drawing.Bitmap iconquanly {
             get {
                 object obj = ResourceManager.GetObject("iconquanly", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconsearch {
+            get {
+                object obj = ResourceManager.GetObject("iconsearch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
