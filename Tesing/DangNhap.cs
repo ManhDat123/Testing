@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,10 @@ namespace Tesing
 {
     public partial class DangNhap : Form
     {
+        public static String ten;
+
+        private MySqlConnection connection;
+        private string connectionString = $"server=localhost;port=3307;database=ql_khohang;user=sa;password=1234";
         public DangNhap()
         {
             InitializeComponent();
@@ -19,9 +25,43 @@ namespace Tesing
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            TrangChu q = new TrangChu();
-            this.Hide();
-            q.ShowDialog();
+            connection = new MySqlConnection(connectionString);
+           
+
+            String username = user.Text;
+            String password = pass.Text;
+
+            if (username == "" || password == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ tài khoản và mật khẩu");
+            }
+
+            connection.Open();
+            String login = "SELECT * FROM users WHERE username =@username AND password =@password;";
+            MySqlCommand cmd = new MySqlCommand(login,connection);
+            
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            try
+            {
+                if (rd.HasRows)
+                {
+                    while (rd.Read())
+                    {
+                        ten = rd.GetString(2);
+                    }
+                    TrangChu tc = new TrangChu();
+                    this.Hide();
+                    tc.ShowDialog();
+                }
+                else { MessageBox.Show("Tài khoản hoặc mật khẩu không đúng"); }
+
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            connection.Close();
+    
         }
 
 
@@ -54,6 +94,11 @@ namespace Tesing
                     Application.Exit();
                 }
             }
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

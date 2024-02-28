@@ -10,9 +10,23 @@ namespace Tesing
 {
     public partial class QuanLyNhap : Form
     {
+        Conn conn = new Conn();
         public QuanLyNhap()
         {
             InitializeComponent();
+            conn.initilize();
+            conn.OpenConnection();
+            String select = "select * from ql_nhap";
+            dt1.DataSource= conn.Select(select);
+            conn.CloseConnection();
+            dt1.Columns[0].HeaderText = "ID";
+            dt1.Columns[1].HeaderText = "Tên nhân viên";
+            dt1.Columns[2].HeaderText = "Tên đại lý";
+            dt1.Columns[3].HeaderText = "Mặt hàng";
+            dt1.Columns[4].HeaderText = "Đơn vị";
+            dt1.Columns[5].HeaderText = "Số lượng";
+            dt1.Columns[6].HeaderText = "Đơn giá";
+            dt1.Columns[7].HeaderText = "Ngày nhập";
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +124,20 @@ namespace Tesing
                     Application.Exit();
                 }
             }
+        }
+
+        private void QuanLyNhap_Load(object sender, EventArgs e)
+        {
+            name.Text = DangNhap.ten;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            String cond = textBox7.Text;
+            String search = "select * from ql_nhap where ten like'%" + cond + "%';";
+            dt1.DataSource = conn.Select(search);
+            conn.CloseConnection();
         }
     }
 }

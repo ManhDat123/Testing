@@ -5,14 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tesing
 {
     public partial class QuanLyNhanVien : Form
     {
+        Conn conn = new Conn();
         public QuanLyNhanVien()
         {
             InitializeComponent();
+            
+            conn.initilize();
+            conn.OpenConnection();
+            String select = "select * from nhan_vien";
+            dt1.DataSource = conn.Select(select);
+            conn.CloseConnection();
+            dt1.Columns[0].HeaderText = "ID";
+            dt1.Columns[1].HeaderText = "Tên";
+            dt1.Columns[2].HeaderText = "Giới tính";
+            dt1.Columns[3].HeaderText = "Ngày sinh";
+            dt1.Columns[4].HeaderText = "Địa chỉ";
+            dt1.Columns[5].HeaderText = "SĐT";
+            dt1.Columns[6].HeaderText = "Ghi chú";
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -20,6 +35,7 @@ namespace Tesing
             ThongTinCaNhan tt = new ThongTinCaNhan();
             this.Hide();
             tt.ShowDialog();
+
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +120,25 @@ namespace Tesing
                     Application.Exit();
                 }
             }
+        }
+
+        private void QuanLyNhanVien_Load(object sender, EventArgs e)
+        {
+            fullname.Text = DangNhap.ten;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            String cond = textBox7.Text;
+            String search = "select * from nhan_vien where name like'%" + cond + "%';";
+            dt1.DataSource = conn.Select(search);
+            conn.CloseConnection();
         }
     }
 }

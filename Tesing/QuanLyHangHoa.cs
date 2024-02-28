@@ -1,18 +1,36 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Tesing
 {
     public partial class QuanLyHangHoa : Form
     {
+        Conn conn = new Conn();
         public QuanLyHangHoa()
         {
             InitializeComponent();
+
+            String select = "select * from nguyen_lieu";
+
+
+            conn.initilize();
+            conn.OpenConnection();
+
+            dt1.DataSource = conn.Select(select);
+            dt1.Columns[0].HeaderText = "ID";
+            dt1.Columns[1].HeaderText = "Tên";
+            dt1.Columns[2].HeaderText = "Đơn vị";
+            dt1.Columns[3].HeaderText = "Số lượng";
+            dt1.Columns[4].HeaderText = "Tối thiểu";
+            dt1.Columns[5].HeaderText = "Tối đa";
+            conn.CloseConnection(); 
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +122,35 @@ namespace Tesing
                     Application.Exit();
                 }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            String cond=textBox8.Text;
+            String search = "select * from nguyen_lieu where ten like'%"+cond+"%';";
+            dt1.DataSource = conn.Select(search);
+            conn.CloseConnection();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuanLyHangHoa_Load(object sender, EventArgs e)
+        {
+            fullname.Text = DangNhap.ten;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

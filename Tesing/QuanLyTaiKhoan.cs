@@ -10,9 +10,25 @@ namespace Tesing
 {
     public partial class QuanLyTaiKhoan : Form
     {
+        Conn conn = new Conn();
         public QuanLyTaiKhoan()
         {
             InitializeComponent();
+            conn.initilize();
+            conn.OpenConnection();
+            String select = "select * from users";
+            dt1.DataSource = conn.Select(select);
+            conn.CloseConnection();
+            dt1.Columns[0].HeaderText = "Tài khoản";
+            dt1.Columns[1].HeaderText = "Mật khẩu";
+            dt1.Columns[2].HeaderText = "Họ & tên";
+            dt1.Columns[3].HeaderText = "Giới tính";
+            dt1.Columns[4].Visible=false;
+            dt1.Columns[5].Visible=false;
+            dt1.Columns[6].HeaderText = "Ngày sinh";
+            dt1.Columns[7].HeaderText = "Địa chỉ";
+            dt1.Columns[8].HeaderText = "Điện thoại";
+
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +127,11 @@ namespace Tesing
                     Application.Exit();
                 }
             }
+        }
+
+        private void QuanLyTaiKhoan_Load(object sender, EventArgs e)
+        {
+            name.Text = DangNhap.ten;
         }
     }
 }

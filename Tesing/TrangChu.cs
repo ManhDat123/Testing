@@ -10,9 +10,16 @@ namespace Tesing
 {
     public partial class TrangChu : Form
     {
+        
+
         public TrangChu()
         {
             InitializeComponent();
+            qlname.Text = DangNhap.ten;
+        }
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +118,11 @@ namespace Tesing
                 DangNhap dn = new DangNhap();
                 dn.ShowDialog();
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

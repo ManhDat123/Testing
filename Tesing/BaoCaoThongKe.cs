@@ -113,5 +113,10 @@ namespace Tesing
             this.Hide();
             bctk.ShowDialog();
         }
+
+        private void BaoCaoThongKe_Load(object sender, EventArgs e)
+        {
+            name.Text = DangNhap.ten;
+        }
     }
 }
