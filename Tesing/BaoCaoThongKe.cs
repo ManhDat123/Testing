@@ -116,7 +116,7 @@ namespace Tesing
 
         private void BaoCaoThongKe_Load(object sender, EventArgs e)
         {
-            name.Text = DangNhap.ten;
+            name.Text = DangNhap.instance.ten;
         }
     }
 }

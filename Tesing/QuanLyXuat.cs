@@ -10,7 +10,7 @@ namespace Tesing
 {
     public partial class QuanLyXuat : Form
     {
-        Conn conn = new Conn();
+        Conn conn = DangNhap.instance.conn;
         public QuanLyXuat()
         {
             InitializeComponent();
@@ -121,7 +121,7 @@ namespace Tesing
 
         private void QuanLyXuat_Load(object sender, EventArgs e)
         {
-            name.Text = DangNhap.ten;
+            name.Text = DangNhap.instance.ten;
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -131,6 +131,48 @@ namespace Tesing
             String search = "select * from ql_xuat where ten like'%" + cond + "%';";
             dt1.DataSource = conn.Select(search);
             conn.CloseConnection();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String sql = "INSERT INTO ql_xuat (id, ten_nhan_vien, ten_dai_ly, ten, don_vi, so_luong, don_gia, date) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox9.Text + "',  '" + textBox8.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "')";
+            conn.Insert(sql);
+            DataTable dt = conn.Select("select * from ql_xuat");
+            dt1.DataSource = dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dt1.SelectedRows.Count > 0)
+            {
+                String sql = "DELETE FROM ql_xuat WHERE id ='" + dt1.CurrentRow.Cells[0].Value.ToString() + "'";
+                conn.Insert(sql);
+                DataTable dt = conn.Select("select * from ql_xuat");
+                dt1.DataSource = dt;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dt1.SelectedRows.Count > 0)
+            {
+                String sql = "UPDATE ql_xuat SET id = '" + textBox1.Text + "', ten_nhan_vien = '" + textBox2.Text + "', ten_dai_ly = '" + textBox9.Text + "', ten = '" + textBox8.Text + "', don_vi = '" + textBox3.Text + "', so_luong = '" + textBox4.Text + "', don_gia = '" + textBox5.Text + "', date = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE id ='" + dt1.CurrentRow.Cells[0].Value.ToString() + "'";
+                conn.Update(sql);
+                DataTable dt = conn.Select("select * from ql_xuat");
+                dt1.DataSource = dt;
+            }
+        }
+
+        private void dt1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dt1.CurrentRow.Cells[0].Value.ToString();
+            textBox2.Text = dt1.CurrentRow.Cells[1].Value.ToString();
+            textBox9.Text = dt1.CurrentRow.Cells[2].Value.ToString();
+            textBox4.Text = dt1.CurrentRow.Cells[5].Value.ToString();
+            textBox5.Text = dt1.CurrentRow.Cells[6].Value.ToString();
+            textBox8.Text = dt1.CurrentRow.Cells[3].Value.ToString();
+            textBox3.Text = dt1.CurrentRow.Cells[4].Value.ToString();
+            dateTimePicker1.Value = (DateTime)dt1.CurrentRow.Cells[7].Value;
         }
     }
 }

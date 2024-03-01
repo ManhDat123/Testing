@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,20 +15,19 @@ namespace Tesing
 {
     public partial class DangNhap : Form
     {
-        public static String ten;
-
-        private MySqlConnection connection;
-        private string connectionString = $"server=localhost;port=3307;database=ql_khohang;user=sa;password=1234";
+        public String ten;
+        public static DangNhap instance;
+        public Conn conn = new Conn("localhost", "3307", "ql_khohang", "root", "");
         public DangNhap()
         {
+
             InitializeComponent();
+            conn.initilize();
+            instance = this;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            connection = new MySqlConnection(connectionString);
-           
-
             String username = user.Text;
             String password = pass.Text;
 
@@ -35,32 +35,16 @@ namespace Tesing
             {
                 MessageBox.Show("Vui lòng điền đầy đủ tài khoản và mật khẩu");
             }
-
-            connection.Open();
-            String login = "SELECT * FROM users WHERE username =@username AND password =@password;";
-            MySqlCommand cmd = new MySqlCommand(login,connection);
-            
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
-            MySqlDataReader rd = cmd.ExecuteReader();
-            try
+            else
             {
-                if (rd.HasRows)
+                if (conn.IsValid(username, password))
                 {
-                    while (rd.Read())
-                    {
-                        ten = rd.GetString(2);
-                    }
+                    ten = conn.GetName(username, password);
                     TrangChu tc = new TrangChu();
                     this.Hide();
                     tc.ShowDialog();
                 }
-                else { MessageBox.Show("Tài khoản hoặc mật khẩu không đúng"); }
-
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-
-            connection.Close();
     
         }
 

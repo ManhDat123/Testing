@@ -15,7 +15,7 @@ namespace Tesing
         public TrangChu()
         {
             InitializeComponent();
-            qlname.Text = DangNhap.ten;
+            qlname.Text = DangNhap.instance.ten;
         }
         private void TrangChu_Load(object sender, EventArgs e)
         {

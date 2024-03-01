@@ -5,12 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tesing
 {
     public partial class QuanLyTaiKhoan : Form
     {
-        Conn conn = new Conn();
+        Conn conn = DangNhap.instance.conn;
         public QuanLyTaiKhoan()
         {
             InitializeComponent();
@@ -20,14 +21,12 @@ namespace Tesing
             dt1.DataSource = conn.Select(select);
             conn.CloseConnection();
             dt1.Columns[0].HeaderText = "Tài khoản";
-            dt1.Columns[1].HeaderText = "Mật khẩu";
+            dt1.Columns[1].Visible = false;
             dt1.Columns[2].HeaderText = "Họ & tên";
-            dt1.Columns[3].HeaderText = "Giới tính";
-            dt1.Columns[4].Visible=false;
-            dt1.Columns[5].Visible=false;
-            dt1.Columns[6].HeaderText = "Ngày sinh";
-            dt1.Columns[7].HeaderText = "Địa chỉ";
-            dt1.Columns[8].HeaderText = "Điện thoại";
+            dt1.Columns[3].Visible=false;
+            dt1.Columns[4].HeaderText = "Ngày sinh";
+            dt1.Columns[5].HeaderText = "Địa chỉ";
+            dt1.Columns[6].HeaderText = "Điện thoại";
 
         }
 
@@ -131,7 +130,46 @@ namespace Tesing
 
         private void QuanLyTaiKhoan_Load(object sender, EventArgs e)
         {
-            name.Text = DangNhap.ten;
+            name.Text = DangNhap.instance.ten;
+        }
+
+        private void dt1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dt1.CurrentRow.Cells[0].Value.ToString();
+            textBox2.Text = dt1.CurrentRow.Cells[2].Value.ToString();
+            textBox3.Text = dt1.CurrentRow.Cells[5].Value.ToString();
+            textBox4.Text = dt1.CurrentRow.Cells[6].Value.ToString();
+            dateTimePicker1.Value = (DateTime)dt1.CurrentRow.Cells[4].Value;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String sql = "INSERT INTO users (id, username, fullname, birth, location, phone) VALUES (" + (conn.Count("select count(*) from users") + 1) + ", '" + textBox1.Text + "', '" + textBox2.Text + "', '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', '" + textBox3.Text + "', '" + textBox4.Text + "')";
+            conn.Insert(sql);
+            DataTable dt = conn.Select("select * from users");
+            dt1.DataSource = dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dt1.SelectedRows.Count > 0)
+            {
+                String sql = "DELETE FROM users WHERE id =" + dt1.CurrentRow.Cells[3].Value.ToString() + "";
+                conn.Insert(sql);
+                DataTable dt = conn.Select("select * from users");
+                dt1.DataSource = dt;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dt1.SelectedRows.Count > 0)
+            {
+                String sql = "UPDATE users SET username = '" + textBox1.Text + "', fullname = '" + textBox2.Text + "', phone = '" + textBox4.Text + "', location = '" + textBox3.Text + "', birth = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE id =" + dt1.CurrentRow.Cells[3].Value.ToString() + "";
+                conn.Update(sql);
+                DataTable dt = conn.Select("select * from users");
+                dt1.DataSource = dt;
+            }
         }
     }
 }
