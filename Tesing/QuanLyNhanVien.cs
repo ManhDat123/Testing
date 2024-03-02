@@ -169,7 +169,7 @@ namespace Tesing
         {
             if (dt1.SelectedRows.Count > 0)
             {
-                String sql = "UPDATE nhan_vien SET name = '" + textBox1.Text + "', sex = '" + comboBox1.Text + "', birth = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', address = '" + textBox2.Text + "', phone = " + textBox4.Text + "' WHERE id =" + dt1.CurrentRow.Cells[0].Value.ToString() + "";
+                String sql = "UPDATE nhan_vien SET name = '" + textBox1.Text + "', sex = '" + comboBox1.Text + "', birth = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', address = '" + textBox2.Text + "', phone = " + textBox4.Text + " WHERE id = " + dt1.CurrentRow.Cells[0].Value.ToString();
                 conn.Update(sql);
                 DataTable dt = conn.Select("select * from nhan_vien");
                 dt1.DataSource = dt;
