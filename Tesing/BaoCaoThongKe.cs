@@ -118,5 +118,19 @@ namespace Tesing
         {
             name.Text = DangNhap.instance.ten;
         }
+
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            LichSuXuatNhap lsxd = new LichSuXuatNhap();
+            this.Hide();
+            lsxd.ShowDialog();
+        }
+
+        private void btnInBaoCao_Click(object sender, EventArgs e)
+        {
+            InBaoCao ibc = new InBaoCao();
+            this.Hide();
+            ibc.ShowDialog();
+        }
     }
 }

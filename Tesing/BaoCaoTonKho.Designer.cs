@@ -365,6 +365,7 @@
             Name = "BaoCaoTonKho";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Báo cáo tồn kho";
+            FormClosing += BaoCaoTonKho_FormClosing;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

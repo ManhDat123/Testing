@@ -14,5 +14,28 @@ namespace Tesing
         {
             InitializeComponent();
         }
+
+        private void LichSuXuatNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Program.IsExiting && e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Program.IsExiting = true;
+                    Application.Exit();
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            BaoCaoThongKe bctk = new BaoCaoThongKe();
+            this.Hide();
+            bctk.ShowDialog();
+        }
     }
 }

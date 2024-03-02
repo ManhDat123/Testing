@@ -21,5 +21,21 @@ namespace Tesing
             this.Hide();
             bctk.ShowDialog();
         }
+
+        private void BaoCaoTonKho_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Program.IsExiting && e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Program.IsExiting = true;
+                    Application.Exit();
+                }
+            }
+        }
     }
 }

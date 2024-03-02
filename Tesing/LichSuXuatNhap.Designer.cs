@@ -105,6 +105,7 @@
             button6.TabIndex = 22;
             button6.Text = "Quay lại";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // LichSuXuatNhap
             // 
@@ -120,6 +121,7 @@
             Name = "LichSuXuatNhap";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Lịch sử xuất nhập";
+            FormClosing += LichSuXuatNhap_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

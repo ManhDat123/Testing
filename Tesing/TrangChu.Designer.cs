@@ -104,7 +104,7 @@
             panel1.Controls.Add(panel2);
             panel1.Location = new System.Drawing.Point(0, 31);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(250, 520);
+            panel1.Size = new System.Drawing.Size(253, 520);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -126,14 +126,14 @@
             // 
             // qlname
             // 
-            qlname.AutoSize = true;
             qlname.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             qlname.ForeColor = System.Drawing.Color.White;
-            qlname.Location = new System.Drawing.Point(41, 13);
-            qlname.Name = "label2";
-            qlname.Size = new System.Drawing.Size(89, 20);
+            qlname.Location = new System.Drawing.Point(3, 0);
+            qlname.Name = "qlname";
+            qlname.Size = new System.Drawing.Size(160, 46);
             qlname.TabIndex = 0;
             qlname.Text = "Tên quản lý";
+            qlname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -156,7 +156,7 @@
             panel6.Controls.Add(btnQLTK);
             panel6.Location = new System.Drawing.Point(0, 119);
             panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(250, 398);
+            panel6.Size = new System.Drawing.Size(251, 398);
             panel6.TabIndex = 2;
             // 
             // btnBCTK
@@ -540,7 +540,6 @@
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel6.ResumeLayout(false);
             panel2.ResumeLayout(false);
