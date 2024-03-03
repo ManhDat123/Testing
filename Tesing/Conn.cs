@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -21,6 +22,59 @@ namespace Tesing
         private string user;
         private string password;
 
+        public List<String>  Get_id()
+        {
+            string query = "Select id from ql_nhap";
+            List<String> id=new List<String>();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                MySqlDataReader rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                {
+                    while (rd.Read())
+                    {
+                        id.Add(rd.GetString(0));
+                  
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            CloseConnection();
+            return id;
+        }
+        public List<String> GetInfo(String ind)
+        {
+            OpenConnection();
+            string query = "Select * from ql_nhap where id='"+ind+"'";
+            List<String> id = new List<String>();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            try
+            {
+                MySqlDataReader rd = cmd.ExecuteReader();
+
+               
+                    while (rd.Read())
+                    {
+                    id.Add(rd.GetString(0));
+                    id.Add(rd.GetString(1));
+                    id.Add(rd.GetString(2));
+                    id.Add(rd.GetString(3));
+                    id.Add(rd.GetString(4));
+                    id.Add(rd.GetInt32(5).ToString());
+                    id.Add(rd.GetInt32(6).ToString());
+                    id.Add(rd.GetString(7));
+
+                }
+                
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            CloseConnection();
+            return id;
+        }
         public Conn(String server, String port, String database, String user, String password)
         {
             this.server = server;

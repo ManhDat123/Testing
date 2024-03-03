@@ -10,6 +10,7 @@ namespace Tesing
 {
     public partial class InBaoCao : Form
     {
+        Conn conn = DangNhap.instance.conn;
         Bitmap bitmap;
         public InBaoCao()
         {
@@ -19,10 +20,6 @@ namespace Tesing
         private void DisplayCurrentDateTime()
         {
             DateTime now = DateTime.Now;
-
-            txtTime.Text = now.ToString("dd/MM/yyyy");
-
-            txtTime.ReadOnly = true;
         }
 
         private void InBaoCao_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,6 +72,37 @@ namespace Tesing
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
+        private void InBaoCao_Load(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach(String ten in conn.Get_id())
+            {
+                comboBox1.Items.Add(ten);
+
+            }
+            /*for(int i=0;i<conn.Get_id().Length;i++)
+            {
+                try{ comboBox1.Items.Add(conn.Get_id()[i]); }
+                    catch(Exception) { }
+            }*/
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String ind = comboBox1.Text.ToString();
+
+            
+            stt.Text = conn.GetInfo(ind)[0];
+            label3.Text = conn.GetInfo(ind)[2];
+            label14.Text = conn.GetInfo(ind)[3];
+            label15.Text = conn.GetInfo(ind)[4];
+            label16.Text = conn.GetInfo(ind)[5];
+            label17.Text = conn.GetInfo(ind)[6];
+            int dongia=int.Parse(label17.Text);
+            int soluong=int.Parse(label16.Text);
+            label19.Text= (dongia*soluong).ToString();
         }
     }
 }
