@@ -14,7 +14,7 @@ namespace Tesing
 {
     public class Conn
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
         private string server;
         private string port;
         private string database;
@@ -91,11 +91,11 @@ namespace Tesing
         {
             string username = "";
             MySqlCommand cmd = new MySqlCommand(query,connection);
-            
+
             try
             {
                 MySqlDataReader rd = cmd.ExecuteReader();
-           
+
                 if (rd.HasRows)
                 {
                     while (rd.Read())
@@ -104,8 +104,26 @@ namespace Tesing
                     }
                 }
             }
-            catch(Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            CloseConnection();
             return username;
+        }
+
+        public string GetUserId(String username, String password)
+        {
+            String result = "";
+            String login = "SELECT id FROM users WHERE username =@username AND password =@password;";
+            MySqlCommand cmd = new MySqlCommand(login, connection);
+
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                result = rd.GetInt32(0).ToString();
+            }
+            rd.Close();
+            return result;
         }
 
 

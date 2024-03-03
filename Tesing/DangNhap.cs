@@ -16,6 +16,7 @@ namespace Tesing
     public partial class DangNhap : Form
     {
         public String ten;
+        public String id;
         public static DangNhap instance;
         public Conn conn = new Conn("localhost", "3307", "ql_khohang", "root", "");
         public DangNhap()
@@ -40,6 +41,7 @@ namespace Tesing
                 if (conn.IsValid(username, password))
                 {
                     ten = conn.GetName(username, password);
+                    id = conn.GetUserId(username, password);
                     TrangChu tc = new TrangChu();
                     this.Hide();
                     tc.ShowDialog();

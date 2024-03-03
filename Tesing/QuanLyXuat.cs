@@ -174,5 +174,10 @@ namespace Tesing
             textBox3.Text = dt1.CurrentRow.Cells[4].Value.ToString();
             dateTimePicker1.Value = (DateTime)dt1.CurrentRow.Cells[7].Value;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

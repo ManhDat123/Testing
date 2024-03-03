@@ -196,6 +196,16 @@ namespace Tesing
                 dt1.DataSource = dt;
             }
         }
+
+        private void textBox8_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     

@@ -10,9 +10,26 @@ namespace Tesing
 {
     public partial class LichSuXuatNhap : Form
     {
+        Conn conn = DangNhap.instance.conn;
         public LichSuXuatNhap()
         {
             InitializeComponent();
+            conn.initilize();
+            conn.OpenConnection();
+            String select = "select * from ql_nhap";
+
+            DataTable dt = conn.Select(select);
+            dt.Merge(conn.Select("SELECT * FROM ql_xuat"));
+            dt1.DataSource = dt;
+            conn.CloseConnection();
+            dt1.Columns[0].HeaderText = "ID";
+            dt1.Columns[1].HeaderText = "Tên nhân viên";
+            dt1.Columns[2].HeaderText = "Tên đại lý";
+            dt1.Columns[3].HeaderText = "Mặt hàng";
+            dt1.Columns[4].HeaderText = "Đơn vị";
+            dt1.Columns[5].HeaderText = "Số lượng";
+            dt1.Columns[6].HeaderText = "Đơn giá";
+            dt1.Columns[7].HeaderText = "Ngày";
         }
 
         private void LichSuXuatNhap_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,6 +53,19 @@ namespace Tesing
             BaoCaoThongKe bctk = new BaoCaoThongKe();
             this.Hide();
             bctk.ShowDialog();
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            
+
+            conn.OpenConnection();
+            String select = "select * from ql_nhap WHERE id like '%" + textBox10.Text + "%'";
+
+            DataTable dt = conn.Select(select);
+            dt.Merge(conn.Select("SELECT * FROM ql_xuat WHERE id like '%" + textBox10.Text + "%'"));
+            dt1.DataSource = dt;
+            conn.CloseConnection();
         }
     }
 }

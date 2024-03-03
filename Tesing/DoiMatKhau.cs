@@ -10,6 +10,8 @@ namespace Tesing
 {
     public partial class DoiMatKhau : Form
     {
+        Conn conn = DangNhap.instance.conn;
+        String id = DangNhap.instance.id;
         public DoiMatKhau()
         {
             InitializeComponent();
@@ -35,6 +37,30 @@ namespace Tesing
                     Program.IsExiting = true;
                     Application.Exit();
                 }
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+
+            if (!textBox1.Text.Equals(conn.Select("SELECT password FROM users WHERE id = " + id + "").Rows[0][0].ToString()))
+            {
+                if (textBox2.Text != textBox3.Text)
+                {
+                    MessageBox.Show("Xác Nhận không chính xác");
+                }
+                else
+                {
+                    String sql = "UPDATE users SET password = '" + textBox2.Text + " 'WHERE id = " + id + "";
+                    conn.CloseConnection();
+                    conn.Update(sql);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu cũ không đúng");
+                
             }
         }
     }
